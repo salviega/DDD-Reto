@@ -7,6 +7,7 @@ public class ChefId extends Identity {
     public ChefId(String id) {
         super(id);
     }
+    public ChefId(){}
 
     public static ChefId of(String id) {
         return  new ChefId(id);

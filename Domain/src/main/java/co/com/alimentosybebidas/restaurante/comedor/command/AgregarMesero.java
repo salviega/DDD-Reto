@@ -1,21 +1,18 @@
 package co.com.alimentosybebidas.restaurante.comedor.command;
 
-import co.com.alimentosybebidas.restaurante.comedor.values.Cuenta;
-import co.com.alimentosybebidas.restaurante.comedor.values.Mesa;
-import co.com.alimentosybebidas.restaurante.comedor.values.MeseroId;
-import co.com.alimentosybebidas.restaurante.comedor.values.Turno;
+import co.com.alimentosybebidas.restaurante.comedor.values.*;
 import co.com.alimentosybebidas.restaurante.generic.values.Nombre;
 import co.com.sofka.domain.generic.Command;
 
 public class AgregarMesero extends Command {
-    private MeseroId meseroId;
+    private ComedorId comedorId;
     private Nombre nombre;
     private Turno turno;
     private Mesa mesa;
     private Cuenta cuenta;
 
-    public AgregarMesero(MeseroId meseroId, Nombre nombre, Turno turno, Mesa mesa, Cuenta cuenta) {
-        this.meseroId = meseroId;
+    public AgregarMesero(ComedorId comedorId, Nombre nombre, Turno turno, Mesa mesa, Cuenta cuenta) {
+        this.comedorId = comedorId;
         this.nombre = nombre;
         this.turno = turno;
         this.mesa = mesa;
@@ -38,7 +35,7 @@ public class AgregarMesero extends Command {
         return cuenta;
     }
 
-    public MeseroId getMeseroId() {
-        return meseroId;
+    public ComedorId getComedorId() {
+        return comedorId;
     }
 }

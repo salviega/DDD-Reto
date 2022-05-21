@@ -14,8 +14,9 @@ public class ComensalCreado extends DomainEvent {
     private Mesa mesa;
     private Cuenta cuenta;
 
-    public ComensalCreado(Nombre nombre, Telefono telefono, Mesa mesa, Cuenta cuenta) {
+    public ComensalCreado(ComensalId comensalId, Nombre nombre, Telefono telefono, Mesa mesa, Cuenta cuenta) {
         super("co.com.alimentosybebidas.restaurante.comedor.events.ComensalCreado");
+        this.comensalId = comensalId;
         this.nombre = nombre;
         this.telefono = telefono;
         this.mesa = mesa;

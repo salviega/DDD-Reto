@@ -7,6 +7,7 @@ public class MenuId extends Identity {
     public MenuId(String id){
         super(id);
     }
+    public MenuId() {}
     public static MenuId of(String id) {
         return new MenuId(id);
     }

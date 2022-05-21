@@ -8,6 +8,10 @@ public class ManagerId extends Identity {
         super(id);
     }
 
+    public ManagerId() {
+
+    }
+
     public static ManagerId of(String id) {
         return new ManagerId(id);
     }

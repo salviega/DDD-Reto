@@ -1,5 +1,6 @@
 package co.com.alimentosybebidas.restaurante.comedor.command;
 
+import co.com.alimentosybebidas.restaurante.comedor.values.ComedorId;
 import co.com.alimentosybebidas.restaurante.comedor.values.ComensalId;
 import co.com.alimentosybebidas.restaurante.comedor.values.Cuenta;
 import co.com.alimentosybebidas.restaurante.comedor.values.Mesa;
@@ -8,22 +9,22 @@ import co.com.alimentosybebidas.restaurante.generic.values.Telefono;
 import co.com.sofka.domain.generic.Command;
 
 public class AgregarComensal extends Command {
-    private ComensalId comensalId;
+    private ComedorId comedorId;
     private Nombre nombre;
     private Telefono telefono;
     private Mesa mesa;
     private Cuenta cuenta;
 
-    public AgregarComensal(ComensalId comensalId, Nombre nombre, Telefono telefono, Mesa mesa, Cuenta cuenta) {
-        this.comensalId = comensalId;
+    public AgregarComensal(ComedorId comedorId, Nombre nombre, Telefono telefono, Mesa mesa, Cuenta cuenta) {
+        this.comedorId = comedorId;
         this.nombre = nombre;
         this.telefono = telefono;
         this.mesa = mesa;
         this.cuenta = cuenta;
     }
 
-    public ComensalId getComensalId() {
-        return comensalId;
+    public ComedorId getComedorId() {
+        return comedorId;
     }
 
     public Nombre getNombre() {

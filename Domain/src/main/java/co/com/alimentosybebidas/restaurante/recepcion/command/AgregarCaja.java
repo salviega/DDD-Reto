@@ -2,20 +2,21 @@ package co.com.alimentosybebidas.restaurante.recepcion.command;
 
 import co.com.alimentosybebidas.restaurante.recepcion.values.Base;
 import co.com.alimentosybebidas.restaurante.recepcion.values.CajaId;
+import co.com.alimentosybebidas.restaurante.recepcion.values.RecepcionId;
 import co.com.sofka.domain.generic.Command;
 
 public class AgregarCaja extends Command {
 
-    private final CajaId cajaId;
+    private final RecepcionId recepcionId;
     private final Base base;
 
-    public AgregarCaja(CajaId cajaId, Base base) {
-        this.cajaId = cajaId;
+    public AgregarCaja(RecepcionId recepcionId, Base base) {
+        this.recepcionId = recepcionId;
         this.base = base;
     }
 
-    public CajaId getCajaId() {
-        return cajaId;
+    public RecepcionId getRecepcionId() {
+        return recepcionId;
     }
 
     public Base getBase() {

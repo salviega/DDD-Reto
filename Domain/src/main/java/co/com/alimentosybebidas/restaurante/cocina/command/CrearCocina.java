@@ -13,6 +13,9 @@ public class CrearCocina extends Command {
         this.cocinaId = cocinaId;
         this.espacio = espacio;
     }
+    public CocinaId getCocinaId() {
+        return cocinaId;
+    }
     public Espacio getEspacio() {
         return espacio;
     }

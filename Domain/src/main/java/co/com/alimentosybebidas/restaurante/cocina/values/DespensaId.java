@@ -6,6 +6,7 @@ public class DespensaId extends Identity {
     public DespensaId(String id) {
         super(id);
     }
+    public DespensaId() {}
 
     public static DespensaId of(String id) {
         return new DespensaId(id);
