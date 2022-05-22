@@ -13,6 +13,7 @@ public class AgregarMenuUseCase extends UseCase<RequestCommand<AgregarMenu>, Res
                 command.getComedorId(), repository().getEventsBy(command.getComedorId().value())
         );
         comedor.agregarMenu(command.getNombre());
+        emit().onResponse(new ResponseEvents(comedor.getUncommittedChanges()));
 
     }
 }

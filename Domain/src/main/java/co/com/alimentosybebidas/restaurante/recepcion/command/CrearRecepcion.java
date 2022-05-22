@@ -6,8 +6,8 @@ import co.com.alimentosybebidas.restaurante.recepcion.values.RecepcionId;
 import co.com.sofka.domain.generic.Command;
 
 public class CrearRecepcion  extends Command {
-    private RecepcionId recepcionId;
-    private Nombre nombre;
+    private final RecepcionId recepcionId;
+    private final Nombre nombre;
     public CrearRecepcion(RecepcionId recepcionId, Nombre nombre) {
 
         this.recepcionId = recepcionId;

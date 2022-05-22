@@ -2,16 +2,17 @@ package co.com.alimentosybebidas.restaurante.recepcion.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
-public class Base implements ValueObject<Integer> {
+public class Base implements ValueObject<String> {
 
-    private final Integer value;
+    private final String value;
 
-    public Base(Integer value) {
+    public Base(String value) {
+
         this.value = value();
     }
 
     @Override
-    public Integer value() {
+    public String value() {
         return value;
     }
 }

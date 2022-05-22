@@ -9,7 +9,7 @@ public class RecepcionCreado extends DomainEvent {
 
     private Nombre nombre;
     public RecepcionCreado(Nombre nombre) {
-        super("co.com.alimentosybebidas.restaurante.recepcion.events.RecepcionCreado");
+        super("co.com.alimentosybebidas.restaurante.recepcion.RecepcionCreado");
         this.nombre = nombre;
     }
 

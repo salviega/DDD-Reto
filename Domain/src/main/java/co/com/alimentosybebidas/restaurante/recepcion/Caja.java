@@ -10,10 +10,6 @@ public class Caja extends Entity<CajaId> {
 
     public Caja(CajaId cajaId, Base base) {
         super(cajaId);
-        Base baseMinima = new Base(1000);
-        if (base.value() != baseMinima.value()) {
-            throw new IllegalArgumentException("La base no está completa");
-        }
         this.base = base;
     }
     public Base obtenerVenta() {

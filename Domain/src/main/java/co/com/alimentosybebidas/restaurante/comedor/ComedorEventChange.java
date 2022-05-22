@@ -9,7 +9,7 @@ public class ComedorEventChange extends EventChange {
     public ComedorEventChange(Comedor comedor) {
         apply((ComedorCreado event) -> {
             comedor.nombre = event.getNombre();
-            comedor.cartaPlato = new HashMap<>();
+            comedor.menus = new HashMap<>();
         });
 
         apply((ComensalCreado event) -> {
@@ -25,14 +25,21 @@ public class ComedorEventChange extends EventChange {
 
         });
 
+        apply((MenuCreado event) -> {
+            var menuId = event.getMenuId();
+            var menu = new Menu(menuId, event.getNombre());
+            comedor.menus.put(menuId, menu);
+        });
+
+
         apply((PlatoAgregadoDeMenu event) ->{
-            comedor.cartaPlato.get(event.getMenuId()).agregarPlato(event.getPlato());
+            comedor.menus.get(event.getMenuId()).agregarPlato(event.getPlato());
         });
         apply((LicorAgregadoDeMenu event) ->{
-            comedor.cartaLicor.get(event.getMenuId()).agregarLicor(event.getLicor());
+            comedor.menus.get(event.getMenuId()).agregarLicor(event.getLicor());
         });
         apply((PostreAgregadoDeMenu event) ->{
-            comedor.cartaPlato.get(event.getMenuId()).agregarPostre(event.getPostre());
+            comedor.menus.get(event.getMenuId()).agregarPostre(event.getPostre());
         });
     }
 }

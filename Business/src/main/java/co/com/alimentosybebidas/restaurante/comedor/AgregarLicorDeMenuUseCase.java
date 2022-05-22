@@ -13,13 +13,6 @@ public class AgregarLicorDeMenuUseCase extends UseCase<RequestCommand<AgregarLic
         var comedor = Comedor.from(
                 command.getComedorId(), repository().getEventsBy(command.getComedorId().value())
         );
-        if(comedor.cartaLicor().get(command.getMenuId()).licores.size() >= 3) {
-            throw new BusinessException(
-                    command.getComedorId().value(),
-                    "La carta está actualizada"
-            );
-        }
-
         comedor.licorAgregadoDeMenu(command.getMenuId(), command.getLicor());
         emit().onResponse((new ResponseEvents(comedor.getUncommittedChanges())));
 

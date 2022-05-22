@@ -9,14 +9,13 @@ import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Comedor extends AggregateEvent<ComedorId> {
     protected Nombre nombre;
     protected Comensal comensal;
     protected Mesero mesero;
-    protected Map<MenuId, Menu> cartaPlato;
-    protected Map<MenuId, Menu> cartaLicor;
-    protected Map<MenuId, Menu> cartaPostre;
+    protected Map<MenuId, Menu> menus;
 
     public Comedor(ComedorId comedorId, Nombre nombre) {
         super(comedorId);
@@ -27,7 +26,6 @@ public class Comedor extends AggregateEvent<ComedorId> {
         super(comedorId);
         subscribe(new ComedorEventChange(this));
     }
-
 
     public static Comedor from(ComedorId comedorId, List<DomainEvent> events) {
         var comedor = new Comedor(comedorId);
@@ -54,10 +52,6 @@ public class Comedor extends AggregateEvent<ComedorId> {
     }
     public void postreAgregadoDeMenu(MenuId menuId, Postre postre) {
         appendChange(new PostreAgregadoDeMenu(menuId, postre)).apply();
-    }
-
-    public Map<MenuId, Menu> cartaLicor(){
-        return cartaLicor;
     }
 }
 

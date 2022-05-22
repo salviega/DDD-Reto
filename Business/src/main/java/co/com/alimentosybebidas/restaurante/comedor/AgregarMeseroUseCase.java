@@ -14,6 +14,6 @@ public class AgregarMeseroUseCase  extends UseCase<RequestCommand<AgregarMesero>
         );
         comedor.agregarMesero(command.getNombre(), command.getMesa(), command.getCuenta(), command.getTurno());
 
-        emit().onResponse((new ResponseEvents(comedor.getUncommittedChanges())));
+        emit().onResponse(new ResponseEvents(comedor.getUncommittedChanges()));
     }
 }

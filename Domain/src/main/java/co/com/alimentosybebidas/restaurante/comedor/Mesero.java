@@ -21,7 +21,4 @@ public class Mesero extends Entity<MeseroId> {
         this.mesa = mesa;
         this.cuenta = cuenta;
     }
-    public void HacerOrden() {
-
-    }
 }

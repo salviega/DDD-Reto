@@ -17,6 +17,7 @@ public class MeseroCreado extends DomainEvent {
 
     public MeseroCreado(MeseroId meseroId, Nombre nombre, Turno turno, Mesa mesa, Cuenta cuenta) {
         super("co.com.alimentosybebidas.restaurante.comedor.events.MeseroCreado");
+        this.meseroId = meseroId;
         this.nombre = nombre;
         this.turno = turno;
         this.mesa = mesa;
